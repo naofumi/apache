@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cd vite-project && npm run build-deploy

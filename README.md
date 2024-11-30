@@ -10,7 +10,27 @@
 
 * Apache configuration available at `conf/httpd.conf`
 
-## Local development
+## Run Development environment
 
-* Start up local dev environment with `docker compose up`
-   * Connect to `http://localhost:8080` 
+The pages under `htdocs` are generated using Vite.
+
+* CD to `vite-project`
+* `npm run dev` to start up the Vite development environment.
+* Monitor the page on http://localhost:5173
+
+## Run Integration environment
+
+1. Start the Apache server with `docker compose`
+2. Run `bin/integrate`
+   1. This will build the vite project into `/htdocs` 
+3. Confirm the page on `http://localhost:8080`
+
+## Deploy
+
+1. Run `bin/integrate` and confirm the page on `http://localhost:8080`
+2. Commit the changes to Git 
+3. Run `kamal deploy`
+
+## Todo
+
+* Build Vite inside Docker so that we don't have to commit the build files to Git.
