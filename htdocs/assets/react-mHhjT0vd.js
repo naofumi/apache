@@ -1,3 +1,4 @@
+/* empty css               */
 (function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -7052,6 +7053,9 @@ function requireClient() {
   return client;
 }
 var clientExports = requireClient();
+clientExports.createRoot(document.getElementById("root")).render(
+  /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
+);
 function App() {
   const [count, setCount] = reactExports.useState(0);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "container max-w-2xl mx-auto mt-16", children: [
@@ -7067,6 +7071,3 @@ function App() {
     ] })
   ] });
 }
-clientExports.createRoot(document.getElementById("root")).render(
-  /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
-);

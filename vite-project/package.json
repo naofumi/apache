@@ -4,10 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "build-deploy": "vite build --outDir ../htdocs --emptyOutDir --minify false",
-    "dev-apache": "vite build --outDir ../htdocs --emptyOutDir --minify false --watch",
+    "build": "vite build --emptyOutDir --minify false",
+    "build-watch": "vite build --emptyOutDir --minify false --watch",
     "lint": "eslint .",
     "preview": "vite preview"
   },

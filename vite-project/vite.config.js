@@ -5,14 +5,15 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  root: resolve(__dirname, 'src/pages'),
+  root: resolve(__dirname, 'src'),
   build: {
-    outDir: resolve(__dirname, 'dist'),
+    outDir: resolve(__dirname, '../htdocs'),
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/pages/index.html'),
-        about: resolve(__dirname, 'src/pages/about/index.html'),
-        healthcheck: resolve(__dirname, 'src/pages/up/index.html'),
+        main: resolve(__dirname, 'src/index.html'),
+        react: resolve(__dirname, 'src/react/index.html'),
+        about: resolve(__dirname, 'src/about/index.html'),
+        healthcheck: resolve(__dirname, 'src/up/index.html'),
       },
     },
   },
