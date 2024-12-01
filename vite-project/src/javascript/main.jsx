@@ -1,3 +1,12 @@
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
 import { useState } from 'react'
 
 function App() {
@@ -5,6 +14,7 @@ function App() {
 
   return (
     <div className="container max-w-2xl mx-auto mt-16">
+      <a href="/about/" className="underline text-blue-600">About Page</a>
       <h1 className="text-4xl text-center">Vite Deployed on Kamal/Apache</h1>
 
       <h2 className="text-2xl text-center my-16">Counter</h2>
@@ -18,5 +28,3 @@ function App() {
     </div>
   )
 }
-
-export default App

@@ -7055,6 +7055,7 @@ var clientExports = requireClient();
 function App() {
   const [count, setCount] = reactExports.useState(0);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "container max-w-2xl mx-auto mt-16", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "/about/", className: "underline text-blue-600", children: "About Page" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-4xl text-center", children: "Vite Deployed on Kamal/Apache" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-2xl text-center my-16", children: "Counter" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-lg mx-auto text-center text-xl", children: [
