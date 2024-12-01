@@ -2,8 +2,8 @@
 
 ## Site features
 
-* Deployment is built using Vite
-  * Allows compiling of things like React
+* Deployment files are built using Vite
+  * Allows compiling of React
   * Adds digests for cache expiration
 * Kamal deployment
   * Healthcheck is required on `/up` 
@@ -23,6 +23,10 @@
 * `cd` to `vite-project`
 * `npm run build-watch` to automatically build the Vite project and generate files for `/htdocs`
 * The site is available on http://localhost:8080
+
+## Adding new HTML pages
+
+* As of present, new HTML pages need to be added to `vite.config.js` manually.
 
 ## Deploy
 
