@@ -12,6 +12,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'src/index.html'),
         react: resolve(__dirname, 'src/react/index.html'),
+        json: resolve(__dirname, 'src/react/json.html'),
         about: resolve(__dirname, 'src/about/index.html'),
         healthcheck: resolve(__dirname, 'src/up/index.html'),
       },

@@ -1,13 +1,23 @@
 FROM httpd:latest AS base
 
+# Install Perl packages
+RUN apt-get update -qq && \
+    apt-get install -y cpanminus make gcc&& \
+	cpanm --notest install CGI && \
+	cpanm --notest install JSON
+
+# Clean up after package installation
+RUN rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 
 # Install packages needed to build gems and node modules
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl build-essential git node-gyp pkg-config python-is-python3 && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    apt-get install --no-install-recommends -y curl build-essential git node-gyp pkg-config python-is-python3
+
+# Clean up after package installation
+RUN rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install JavaScript dependencies
 ARG NODE_VERSION=22.2.0

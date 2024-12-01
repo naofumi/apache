@@ -13,6 +13,8 @@
   * Vite is used for build only.
 * CGI is available on `/cgi-bin`
 
+
+
 ## Apache Configuration
 
 * Apache configuration available at `conf/httpd.conf`
@@ -38,3 +40,10 @@
 * Contents of `/htdocs` are managed by Vite.
    * Do not commit this to Git (it is included in `.gitignore`)
    * Do not edit the contents of this directory. Vite will override any changes.
+
+## Purpose
+
+* To use React within a mainly static MPA marketing website. 
+  * React will be embedded within regular MPA static pages. 
+  * We do not intend to use React such that it overtakes the whole page.
+* Use vite to add digests to assets, enabling better caching.
