@@ -11,7 +11,6 @@
   * Use Apache during development. Don't use Vite server.
     * Vite server does not have the same behaviors nor features as Apache. (e.g., handling of trailing slashes)
   * Vite is used for build only.
-  * Contents of `/htdocs` are managed by Vite.
 * CGI is available on `/cgi-bin`
 
 ## Apache Configuration
@@ -27,10 +26,11 @@
 
 ## Deploy
 
-1. Run `bin/integrate` and confirm the page on `http://localhost:8080`
-2. Commit the changes to Git 
-3. Run `kamal deploy`
+1. Commit changes to Git
+2. Run `kamal deploy`
 
-## Todo
+## Notes
 
-* Build Vite inside Docker so that we don't have to commit the build files to Git.
+* Contents of `/htdocs` are managed by Vite.
+   * Do not commit this to Git (it is included in `.gitignore`)
+   * Do not edit the contents of this directory. Vite will override any changes.

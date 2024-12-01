@@ -1,15 +1,6 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
-
 import { useState } from 'react'
 
-function App() {
+export default function App() {
   const [count, setCount] = useState(0)
 
   return (
