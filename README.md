@@ -2,28 +2,28 @@
 
 ## Site features
 
-* The path `/` connects to `htdocs/index.html`
-* We have a healthcheck on path `/up` implemented at `htdocs/up/index.html`
-* `/cgi-bin/perl.cgi` connects to `cgi-bin/perl.cgi`
+* Deployment is built using Vite
+  * Allows compiling of things like React
+  * Adds digests for cache expiration
+* Kamal deployment
+  * Healthcheck is required on `/up` 
+* Development using Apache
+  * Use Apache during development. Don't use Vite server.
+    * Vite server does not have the same behaviors nor features as Apache. (e.g., handling of trailing slashes)
+  * Vite is used for build only.
+  * Contents of `/htdocs` are managed by Vite.
+* CGI is available on `/cgi-bin`
 
-## Configuration
+## Apache Configuration
 
 * Apache configuration available at `conf/httpd.conf`
 
-## Run Development environment
+## Development environment
 
-The pages under `htdocs` are generated using Vite.
-
-* CD to `vite-project`
-* `npm run dev` to start up the Vite development environment.
-* Monitor the page on http://localhost:5173
-
-## Run Integration environment
-
-1. Start the Apache server with `docker compose`
-2. Run `bin/integrate`
-   1. This will build the vite project into `/htdocs` 
-3. Confirm the page on `http://localhost:8080`
+* At the project root, run the Apache server with `docker compose up`
+* `cd` to `vite-project`
+* `npm run build-watch` to automatically build the Vite project and generate files for `/htdocs`
+* The site is available on http://localhost:8080
 
 ## Deploy
 
