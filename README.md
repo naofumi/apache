@@ -1,19 +1,17 @@
 # Apache on Kamal
 
+## Purpose
+
+1. Host static websites
+2. Use CGI scripts
+3. Host static assets (instead of hosting on S3)
+
 ## Site features
 
-* Deployment files are built using Vite
-  * Allows compiling of React
-  * Adds digests for cache expiration
 * Kamal deployment
-  * Healthcheck is required on `/up` 
-* Development using Apache
-  * Use Apache during development. Don't use Vite server.
-    * Vite server does not have the same behaviors nor features as Apache. (e.g., handling of trailing slashes)
-  * Vite is used for build only.
+  * Healthcheck is available on `/up`
+* Put HTML and asset files in `/htdoc` 
 * CGI is available on `/cgi-bin`
-
-
 
 ## Apache Configuration
 
@@ -22,28 +20,9 @@
 ## Development environment
 
 * At the project root, run the Apache server with `docker compose up`
-* `cd` to `vite-project`
-* `npm run build-watch` to automatically build the Vite project and generate files for `/htdocs`
 * The site is available on http://localhost:8080
-
-## Adding new HTML pages
-
-* As of present, new HTML pages need to be added to `vite.config.js` manually.
 
 ## Deploy
 
 1. Commit changes to Git
 2. Run `kamal deploy`
-
-## Notes
-
-* Contents of `/htdocs` are managed by Vite.
-   * Do not commit this to Git (it is included in `.gitignore`)
-   * Do not edit the contents of this directory. Vite will override any changes.
-
-## Purpose
-
-* To use React within a mainly static MPA marketing website. 
-  * React will be embedded within regular MPA static pages. 
-  * We do not intend to use React such that it overtakes the whole page.
-* Use vite to add digests to assets, enabling better caching.
