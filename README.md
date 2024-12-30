@@ -4,7 +4,7 @@
 
 1. Host static websites
 2. Use CGI scripts
-3. Host static assets (instead of hosting on S3)
+3. Asset server (instead of hosting on S3)
 
 ## Site features
 
