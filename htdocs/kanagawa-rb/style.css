@@ -132,6 +132,12 @@ h1 {
     padding: 0 16px;
 }
 
+.footer {
+    margin: 32px 0;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
 .subtitle {
     text-align: center;
     font-weight: 400;
@@ -156,6 +162,34 @@ h1 {
 
 .description__content {
     font-size: 1.25rem;
+}
+
+dl {
+    margin-left: 24px;
+    font-size: 1rem;
+}
+dt {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+dd {
+    margin-left: 24px;
+    margin-bottom: 16px;
+}
+
+.recap {
+    margin-bottom: 32px;
+}
+
+.recap__heading {
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.recap__content {
+    font-size: 1rem;
 }
 
 .logo-box {
