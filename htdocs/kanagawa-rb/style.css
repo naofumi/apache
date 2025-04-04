@@ -1,0 +1,210 @@
+/* Reset start */
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    /* 4. Add accessible line-height */
+    line-height: 1.5;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+    isolation: isolate;
+}
+
+/* Reset end */
+
+
+:root {
+    font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+
+    /* Constants */
+    --main-bg-color: rgb(253, 250, 247);
+    --main-text-color: #666666;
+    --primary-color: #c29e3b;
+    --primary-color-light: #d0b363;
+    --white-color: #FFFFFF;
+    /* Constants end */
+}
+
+/* Default styles */
+html {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+strong {
+    font-weight: 700;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 400;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 48px;
+    @media (min-width: 640px) {
+        font-size: 72px;
+    }
+}
+
+/* End Default styles */
+
+/* Utility classes */
+.mt-8 {
+    margin-top: 32px;
+}
+
+/* End Utility classes */
+
+.top-page {
+    max-width: 840px;
+    margin: 0 auto;
+    background-image: url("kanagawa-rb-illustration.png");
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 800px;
+    @media (min-width: 480px) {
+        min-height: 900px;
+    }
+    @media (min-width: 640px) {
+        min-height: 1100px;
+    }
+    @media (min-width: 768px) {
+        min-height: 1200px;
+    }
+}
+
+.top-nav {
+    padding: 4px 0;
+}
+
+.main {
+    max-width: 640px;
+    margin: 48px auto 0 auto;
+    padding: 0 16px;
+}
+
+.subtitle {
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 32px;
+    @media (min-width: 640px) {
+        font-size: 24px;
+
+    }
+}
+
+.description {
+    margin-bottom: 32px;
+}
+
+.description__heading {
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.description__content {
+    font-size: 1.25rem;
+}
+
+.logo-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.button-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 16px;
+}
+
+.btn {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    padding: 4px 12px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--white-color);
+        color: var(--primary-color);
+    }
+}
+
+.btn--no-border {
+    border: none;
+    color: var(--primary-color);
+    background-color: inherit;
+    &:hover {
+        background-color: inherit;
+        color: var(--primary-color-light);
+    }
+}
+
+.btn__icon {
+    width: 24px;
+}
+
+.btn--lg {
+    font-size: 24px;
+}
