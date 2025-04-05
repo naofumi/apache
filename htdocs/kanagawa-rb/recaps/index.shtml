@@ -26,7 +26,7 @@
           <dd>Foobar</dd>
         </dl>
       </div>
-      <!--#include virtual="/cgi-bin/recaps.cgi" -->
+      <!--#include virtual="/cgi-bin/recaps.py" -->
     </div>
   </main>
 </body>

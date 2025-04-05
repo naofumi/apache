@@ -2,7 +2,7 @@ FROM httpd:latest AS base
 
 # Install Perl packages
 RUN apt-get update -qq && \
-    apt-get install -y cpanminus make gcc&& \
+    apt-get install -y cpanminus make gcc python3-pip python3-yaml && \
 	cpanm --notest install CGI && \
 	cpanm --notest install JSON && \
     cpanm --notest install YAML::XS
