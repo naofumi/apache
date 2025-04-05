@@ -30,8 +30,6 @@
     </div>
   </main>
 </div>
-<footer class="footer">
-  このサイトは静的HTMLファイルをApacheサーバに載せ、Kamal2でさくらインターネットのVPSにデプロイし、CloudflareのCDNから配信しています。
-</footer>
+<!--#include virtual="footer.html" -->
 </body>
 </html>

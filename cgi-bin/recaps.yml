@@ -1,0 +1,12 @@
+- date: 2023-02-05
+  items:
+    - title: "Title 1"
+      content: "We had a hard time"
+    - title: "Title 2"
+      content: "We had a hard day's night"
+- date: 2023-03-01
+  items:
+    - title: "Title 3"
+      content: "We had a hard time"
+    - title: "Title 4"
+      content: "We had a hard day's night"

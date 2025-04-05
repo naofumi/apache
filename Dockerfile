@@ -4,7 +4,8 @@ FROM httpd:latest AS base
 RUN apt-get update -qq && \
     apt-get install -y cpanminus make gcc&& \
 	cpanm --notest install CGI && \
-	cpanm --notest install JSON
+	cpanm --notest install JSON && \
+    cpanm --notest install YAML::XS
 
 # Clean up after package installation
 RUN rm -rf /var/lib/apt/lists /var/cache/apt/archives

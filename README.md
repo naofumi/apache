@@ -22,6 +22,8 @@
 * At the project root, run the Apache server with `docker compose up`
 * The site is available on http://localhost:8080
 
+* If you have changed `conf/httpd.conf`, then you need to rebuild the Dockerfile so in this case, run the Apache Server with `docker compose up --build`
+
 ## Deploy
 
 1. Commit changes to Git
