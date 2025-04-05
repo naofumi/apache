@@ -83,7 +83,7 @@ strong {
     font-weight: 700;
 }
 
-h1 {
+.heading--1 {
     text-align: center;
     font-weight: 400;
     width: fit-content;
