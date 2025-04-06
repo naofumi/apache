@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Recaps | Kanagawa.rb</title>
+  <title>Inquiry | Kanagawa.rb</title>
   <link rel="stylesheet" href="../css/style.css?v=1">
 </head>
-<body class="about-page body">
+<body class="inquiry-page body">
   <nav class="top-nav">
     <a href="../" class="btn btn--no-border btn--lg btn--left">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="btn__icon">
@@ -17,16 +17,12 @@
     <span></span>
   </nav>
   <main class="main">
-    <h1 class="heading--1">過去の集まり</h1>
-    <div class="recap mt-8">
-      <h2 class="recap__heading">2025-04-12</h2>
-      <div class="recap__content">
-        <dl>
-          <dt>Hotwire vs. React</dt>
-          <dd>Foobar</dd>
-        </dl>
-      </div>
-      <!--#include virtual="/cgi-bin/recaps.py" -->
+    <h1 class="heading--1">お問合せ</h1>
+    <div class="form--inquiry mt-8">
+      <form method='post' action='/cgi-bin/inquiry.cgi'>
+        Text: <textarea name='text' required></textarea>
+        <input type='submit' value='Submit'>
+      </form>
     </div>
   </main>
 </body>

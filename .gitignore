@@ -1,1 +1,3 @@
 /.kamal/registry_password.key
+/.kamal/slack_webhook_url.key
+/.env

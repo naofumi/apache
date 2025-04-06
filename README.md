@@ -2,19 +2,13 @@
 
 ## Purpose
 
-A lot of the websites that we build aren't "web apps" but simple information or promotion sites.
-In many cases, just hosting static files is enough.
-Web hosting services like Amplify satisfy this need, but you can also just use Apache.
+This is a static website hosted on Apache. We use SSI and CGI for interactivity.
 
-This site if for these kinds of sites.
-Additionally, similar to how these sites often use serverless functions for minimal interactivity,
-we provide similar features through SSI and CGI.
-
-Deployment is done using Kamal, and we also have a Cloudflare CDN in front of it.
+Deployment is done using Kamal.
 
 1. Host static websites
-2. Minimal dynamic features: CGI scripts with SSI – Perl and Python are available.
-3. Asset server (instead of hosting on S3)
+2. Minimal dynamic features: CGI scripts and SSI
+3. Asset server for other websites (I use it instead of hosting assets on S3).
 
 ## Site features
 
@@ -23,6 +17,29 @@ Deployment is done using Kamal, and we also have a Cloudflare CDN in front of it
 * Put HTML and asset files in `/htdoc` 
 * CGI is available on `/cgi-bin`
 * SSI is enabled
+
+## CGI performance
+
+Tests performed on site hosted on Sakura Internet VPS. No CDN for HTML files but proxied through Cloudflare.
+
+As you can see, CGI can handle a significant number of concurrent requests just fine.
+
+```shell
+# Static HTML
+ab -n 100 -c 20 http://apache.castle104.com/kanagawa-rb/about/ 
+Requests per second:    194.09 [#/sec] (mean)
+Time per request:       103.045 [ms] (mean)
+
+# SSI only
+ab -n 100 -c 20 http://apache.castle104.com/kanagawa-rb/
+Requests per second:    196.29 [#/sec] (mean)
+Time per request:       101.891 [ms] (mean)
+
+# Python CGI vis SSI - parse data from text file
+ab -n 100 -c 20 http://apache.castle104.com/kanagawa-rb/recaps/
+Requests per second:    201.91 [#/sec] (mean)
+Time per request:       99.052 [ms] (mean)
+```
 
 ## Apache Configuration
 
@@ -39,3 +56,11 @@ Deployment is done using Kamal, and we also have a Cloudflare CDN in front of it
 
 1. Commit changes to Git
 2. Run `kamal deploy`
+
+## Details of the Kanagawa.rb setup
+
+The Kanagawa.rb site is mainly static content but has a few dynamic/interactive pages.
+
+1. The Recaps page is dynamically generated from a YAML file using CGI and SSI.
+2. The main page has a footer that can be shared among pages with SSI. SSI allows us to ensure consistency across different pages.
+3. The inquiry page has a form that is submitted to a CGI script, which then sends a Slack message server-side via the Slack webhooks API.

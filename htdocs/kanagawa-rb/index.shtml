@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Kanagawa.rb</title>
-  <link rel="stylesheet" href="style.css?v=1">
+  <link rel="stylesheet" href="css/style.css?v=1">
 </head>
 <body class="body">
 <div class="top-page">
@@ -19,14 +19,15 @@
         ゆるく、アツく、のんびりと語り合っています</p>
     </div>
     <div class="logo-box mt-8">
-      <img src="header-ruby-logo@2x.png" alt="Ruby Logo" width="36" height="36"></img>
-      <img src="logo_rails-circle.svg" alt="Rails Logo" width="36" height="36"></img>
-      <img src="React.svg" alt="React Logo" width="36" height="36"></img>
-      <img src="Next.svg" alt="Next.js Logo" width="36" height="36"></img>
+      <img src="images/header-ruby-logo@2x.png" alt="Ruby Logo" width="36" height="36"></img>
+      <img src="images/logo_rails-circle.svg" alt="Rails Logo" width="36" height="36"></img>
+      <img src="images/React.svg" alt="React Logo" width="36" height="36"></img>
+      <img src="images/Next.svg" alt="Next.js Logo" width="36" height="36"></img>
     </div>
     <div class="button-box">
       <a href="about" class="btn btn--lg">私たちについて</a>
       <a href="recaps" class="btn btn--lg">過去の集まり</a>
+      <a href="inquiry" class="btn btn--lg">お問合せ</a>
     </div>
   </main>
 </div>

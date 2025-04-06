@@ -106,7 +106,7 @@ strong {
 .top-page {
     max-width: 840px;
     margin: 0 auto;
-    background-image: url("kanagawa-rb-illustration.png");
+    background-image: url("../images/kanagawa-rb-illustration.png");
     background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;
