@@ -20,12 +20,12 @@ Deployment is done using Kamal.
 
 ## CGI performance
 
-Tests performed on site hosted on Sakura Internet VPS. No CDN for HTML files but proxied through Cloudflare.
-
-As you can see, although SSI and CGI do have an impact on performance,
+As you can see, although SSI and CGI do have a measurable impact on performance,
 it is not a significant issue on today's hardware for most traffic levels.    
 
 ```shell
+# All tests performed with 100 requests (-n) and a concurrency of 20 (-c)
+
 # Static HTML
 ab -n 100 -c 20 http://localhost:8080/kanagawa-rb/about/ 
 Requests per second:    1982.36 [#/sec] (mean)
@@ -53,7 +53,7 @@ Time per request:       47.500 [ms] (mean)
 ## Development environment
 
 * In the project root, run the Apache server with `docker compose up`
-* The site is available on http://localhost:8080
+* The site will be available on http://localhost:8080
 
 * If you have changed `conf/httpd.conf`, then you need to rebuild the Dockerfile so in this case, run the Apache Server with `docker compose up --build`
 
@@ -68,4 +68,4 @@ The Kanagawa.rb site is mainly static content but has a few dynamic/interactive 
 
 1. The Recaps page is dynamically generated from a YAML file using CGI and SSI.
 2. The main page has a footer that can be shared among pages with SSI. SSI allows us to ensure consistency across different pages.
-3. The inquiry page has a form that is submitted to a CGI script, which then sends a Slack message server-side via the Slack webhooks API.
+3. The inquiry page has a form that is submitted to a CGI script. The CGI script then sends a Slack message server-side via the Slack webhooks API.
