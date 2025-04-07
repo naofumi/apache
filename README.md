@@ -21,7 +21,7 @@ Deployment is done using Kamal.
 ## CGI performance
 
 SSI and CGI have a measurable impact on performance,
-but it is not a significant issue on today's hardware for most traffic levels as demostrated below.    
+but it is not a significant issue on today's hardware for most traffic levels as demonstrated below.    
 
 ```shell
 # All tests performed with 100 requests (-n) and a concurrency of 20 (-c)
