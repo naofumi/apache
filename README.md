@@ -22,24 +22,29 @@ Deployment is done using Kamal.
 
 Tests performed on site hosted on Sakura Internet VPS. No CDN for HTML files but proxied through Cloudflare.
 
-As you can see, CGI can handle a significant number of concurrent requests just fine.
+As you can see, although SSI and CGI do have an impact on performance,
+it is not a significant issue on today's hardware for most traffic levels.    
 
 ```shell
 # Static HTML
-ab -n 100 -c 20 http://apache.castle104.com/kanagawa-rb/about/ 
-Requests per second:    194.09 [#/sec] (mean)
-Time per request:       103.045 [ms] (mean)
+ab -n 100 -c 20 http://localhost:8080/kanagawa-rb/about/ 
+Requests per second:    1982.36 [#/sec] (mean)
+Time per request:       10.089 [ms] (mean)
 
 # SSI only
-ab -n 100 -c 20 http://apache.castle104.com/kanagawa-rb/
-Requests per second:    196.29 [#/sec] (mean)
-Time per request:       101.891 [ms] (mean)
+ab -n 100 -c 20 http://localhost:8080/kanagawa-rb/
+Requests per second:    1150.99 [#/sec] (mean)
+Time per request:       17.376 [ms] (mean)
 
-# Python CGI vis SSI - parse data from text file
-ab -n 100 -c 20 http://apache.castle104.com/kanagawa-rb/recaps/
-Requests per second:    201.91 [#/sec] (mean)
-Time per request:       99.052 [ms] (mean)
+# Perl CGI vis SSI - parse data from text file
+ab -n 100 -c 20 http://localhost:8080/kanagawa-rb/recaps/
+Requests per second:    421.05 [#/sec] (mean)
+Time per request:       47.500 [ms] (mean)
 ```
+
+#### Notes
+
+* Perl has better support for CGI compared to Python, and the startup time for a simple script is also much faster. It is preferred for CGI scripts.
 
 ## Apache Configuration
 
